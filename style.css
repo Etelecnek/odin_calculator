@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(207, 207, 207);
+}
+.screen {
+    width: 400px;
+    height: 200px;
+}
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width:fit-content;
+    height: fit-content;
+
+}
+.button {
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
