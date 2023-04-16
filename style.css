@@ -3,9 +3,28 @@
     flex-direction: row;
     background-color: rgb(207, 207, 207);
 }
-.screen {
-    width: 400px;
+.screen-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 465px;
     height: 200px;
+}
+.sign {
+    text-align: center;
+    font-size: 50px;
+    width: 110px;  
+}
+.screen {
+    text-align: right;
+    font-size: 50px;      
+    width: 240px;
+
+}
+.operations {
+    text-align: center;
+    font-size: 50px;
+    width: 110px;
 }
 .button-container {
     display: grid;
