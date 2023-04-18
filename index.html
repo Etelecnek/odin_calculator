@@ -13,34 +13,34 @@
                 <div class="screen-container">
                     <div class="sign"></div>
                     <input type="text" id="numberscreen">
-                    <div class="operations"></div>
+                    <div class="operators"></div>
                 </div>
                 <div class="button-container">
-                    <button value="CE" class="CE">CE</button>
-                    <button value="C" class="C">C</button>
-                    <button value="Backspace" class="Backspace">Backspace</button>
-                    <button value="÷" class="Divide">÷</button>
+                    <button class="CE">CE</button>
+                    <button onclick="clearScreen()" class="C">C</button>
+                    <button class="Backspace">Backspace</button>
+                    <button onclick="divideNumber()" class="Divide">÷</button>
                     <button class="btn">7</button>
                     <button class="btn">8</button>
                     <button class="btn">9</button>
-                    <button value="x" class="Times">x</button>
+                    <button onclick="multiplyNumber()" class="Times">x</button>
                     <button class="btn">4</button>
                     <button class="btn">5</button>
                     <button class="btn">6</button>
-                    <button value="-" class="Minus">-</button>
+                    <button onclick="subtractNumber()" class="Minus">-</button>
                     <button class="btn">1</button>
                     <button class="btn">2</button>
                     <button class="btn">3</button>
-                    <button value="+" class="Plus">+</button>
-                    <button value="+/-" class="Sign">+/-</button>
+                    <button onclick="addNumber()" class="Plus">+</button>
+                    <button class="Sign">+/-</button>
                     <button class="btn">0</button>
-                    <button value="." class="Decimal">.</button>
-                    <button value="=" class="Equal">=</button>
+                    <button class="Decimal">.</button>
+                    <button onclick="equalNumber()" class="Equal">=</button>
                 </div>            
             </div>
             <div class="right-container">
                 <div class="history">History</div>
-                <div class="history-log"></div>
+                <div class="historyLog"></div>
             </div>
         </div>
     </body>
