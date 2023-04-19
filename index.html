@@ -10,14 +10,15 @@
     <body>
         <div class="container">
             <div class="left-container">
-                <div class="screen-container">
-                    <div class="sign"></div>
-                    <input type="text" id="numberscreen">
-                    <div class="operators"></div>
+                <div class="screencontainer">
+                    <p class="lastnumber"></p>
+                    <div class="calcscreen">    
+                        <input type="text" id="numberscreen">
+                    </div>
                 </div>
                 <div class="button-container">
-                    <button class="CE">CE</button>
-                    <button onclick="clearScreen()" class="C">C</button>
+                    <button onclick="clearScreen()" class="CE">CE</button>
+                    <button onclick="reset()" class="C">C</button>
                     <button class="Backspace">Backspace</button>
                     <button onclick="divideNumber()" class="Divide">÷</button>
                     <button class="btn">7</button>

@@ -3,30 +3,27 @@
     flex-direction: row;
     background-color: rgb(207, 207, 207);
 }
-.screen-container {
+.calcscreen {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 465px;
-    height: 200px;
+    height: 75px;
 }
-.sign {
-    text-align: center;
-    font-size: 50px;
-    width: 110px;  
+.lastnumber {
+    border: none;
+    text-align: right;
+    font-size: 25px;
+    height: 25px;
+    width: 465px;
 }
 #numberscreen {
     background-color: rgb(207, 207, 207);
     border: none;
     text-align: right;
     font-size: 50px;      
-    width: 240px;
+    width: 465px;
 
-}
-.operators {
-    text-align: center;
-    font-size: 50px;
-    width: 110px;
 }
 .button-container {
     display: grid;

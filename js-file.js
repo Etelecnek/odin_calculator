@@ -1,94 +1,169 @@
 let totalNumber = "";
 let useNumber;
 let inputOp;
+let clearBool = "false";
+const lnumber = document.querySelector('.lastnumber');
 
 // Input numbers in text input
-function enterNumber() {
-    textField = document.getElementById("numberscreen")
-    buttons = document.getElementsByClassName("btn")
-  
-
-    Array.prototype.forEach.call (buttons, (button) => {
-      button.addEventListener("click", () => {
-        textField.value += button.innerText
-      })
-    })
-}
-
 document.addEventListener("DOMContentLoaded", enterNumber);
 
 function clearScreen() {
   document.getElementById('numberscreen').value = "";
 }
 
+function reset() {
+  totalNumber = "";
+  useNumber = "";
+  inputOp = "";
+  clearBool = "false";
+  document.getElementById('numberscreen').value = "";
+  lnumber.textContent = "";
+}
+
+function enterNumber() {
+  textField = document.getElementById("numberscreen");
+  buttons = document.getElementsByClassName("btn");
+  Array.prototype.forEach.call (buttons, (button) => {
+    button.addEventListener("click", () => {
+      if (clearBool === "false") {
+        textField.value += button.innerText
+      } else {
+        clearScreen();
+        textField.value += button.innerText
+        clearBool = "false";
+      }      
+    })
+  });
+}
+
 function calc() {
   if (inputOp === "+") {
     totalNumber = parseInt(useNumber) + parseInt(document.getElementById('numberscreen').value);
-    useNumber = totalNumber;
-    alert(totalNumber);
+    useNumber = totalNumber;    
   } else if (inputOp === "-") {
     totalNumber = parseInt(useNumber) - parseInt(document.getElementById('numberscreen').value);
-    useNumber = totalNumber;
-    alert(totalNumber);
+    useNumber = totalNumber;    
   } else if (inputOp === "x") {
     totalNumber = parseInt(useNumber) * parseInt(document.getElementById('numberscreen').value);
-    useNumber = totalNumber;
-    alert(totalNumber);
+    useNumber = totalNumber;    
   } else if (inputOp === "÷") {
     totalNumber = parseInt(useNumber) / parseInt(document.getElementById('numberscreen').value);
-    useNumber = totalNumber;
-    alert(totalNumber);
+    useNumber = totalNumber;    
   } else {
 
   }
 }
 
 function addNumber() {
-  calc();
-  if (totalNumber === "") {
-    useNumber = document.getElementById('numberscreen').value;
-  }
-  if (inputOp != "+") {
-    inputOp = "+";
-  }
-  clearScreen();
+  if (clearBool === "false") {
+    calc();
+    if (totalNumber === "") {
+      useNumber = document.getElementById('numberscreen').value;
+    
+    }
+    if (inputOp != "+") {
+      inputOp = "+";
+    }
+    lnumber.textContent = useNumber + " +";
+    clearBool = "true";
+    if (totalNumber === "") {
+  
+    } else {
+      document.getElementById('numberscreen').value = totalNumber;
+    }
+  } else {
+    if (inputOp != "+") {
+      inputOp = "+";
+    }
+    lnumber.textContent = useNumber + " +";
+  }  
 }
 
 function subtractNumber() {
-  calc();
-  if (totalNumber === "") {
-    useNumber = document.getElementById('numberscreen').value;
+  if (clearBool === "false") {
+    calc();
+    if (totalNumber === "") {
+      useNumber = document.getElementById('numberscreen').value;
+    }
+    if (inputOp != "-") {
+      inputOp = "-";
+    }
+    lnumber.textContent = useNumber + " -";
+    clearBool = "true";
+    if (totalNumber === "") {
+  
+    } else {
+    document.getElementById('numberscreen').value = totalNumber;
+    }
+  } else {
+    if (inputOp != "-") {
+      inputOp = "-";
+    }
+    lnumber.textContent = useNumber + " -";
   }
-  if (inputOp != "-") {
-    inputOp = "-";
-  }
-  clearScreen();
 }
 
 function multiplyNumber() {
-  calc();
-  if (totalNumber === "") {
-    useNumber = document.getElementById('numberscreen').value;
-  }
-  if (inputOp != "x") {
-    inputOp = "x";
-  }
-  clearScreen();
+  if (clearBool === "false") {
+    calc();
+    if (totalNumber === "") {
+      useNumber = document.getElementById('numberscreen').value;
+    }
+    if (inputOp != "x") {
+      inputOp = "x";
+    }
+    lnumber.textContent = useNumber + " x";
+    clearBool = "true";
+    if (totalNumber === "") {  
+
+    } else {
+      document.getElementById('numberscreen').value = totalNumber;
+    }
+  } else {
+    if (inputOp != "x") {
+      inputOp = "x";
+    }
+    lnumber.textContent = useNumber + " x";
+  }  
 }
 
 function divideNumber() {
-  calc();
-  if (totalNumber === "") {
-    useNumber = document.getElementById('numberscreen').value;
-  }
-  if (inputOp != "÷") {
-    inputOp = "÷";
-  }
-  clearScreen();
+  if (clearBool === "false") {
+    calc();
+    if (totalNumber === "") {
+      useNumber = document.getElementById('numberscreen').value;
+    }
+    if (inputOp != "÷") {
+      inputOp = "÷";
+    }
+    lnumber.textContent = useNumber + " ÷";
+    clearBool = "true";
+    if (totalNumber === "") {
+  
+    } else {
+      document.getElementById('numberscreen').value = totalNumber;
+    }
+  } else {
+    if (inputOp != "÷") {
+      inputOp = "÷";
+    }
+    lnumber.textContent = useNumber + " ÷";
+  }  
 }
 
 function equalNumber() {
-  calc();
+  if (clearBool === "false") {
+    calc();
+    lnumber.textContent = useNumber + " +";
+    clearBool = "true";
+    if (totalNumber === "") {
+  
+    } else {
+      document.getElementById('numberscreen').value = totalNumber;
+    }
+  } else {
+
+  }
 }
 
 
